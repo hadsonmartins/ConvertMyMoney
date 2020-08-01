@@ -1,7 +1,6 @@
 {
   "name": "convertmymoney",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -16,6 +15,6 @@
     "start": "node index.js",
     "test": "jest"
   },
-  "author": "",
+  "author": "Hadson Martins",
   "license": "ISC"
 }

@@ -1,5 +1,5 @@
 const express = require('express')
-const app = express ()
+const app = express()
 const path = require('path')
 const convert = require('./lib/convert')
 
@@ -12,16 +12,16 @@ app.get('/', (req, res) => {
 
 })
 app.get('/cotacao', (req, res) => {
-    const{cotacao, quantidade} = req.query
-    if(cotacao && quantidade) {
-    const conversao = convert.convert(cotacao, quantidade)
+    const { cotacao, quantidade } = req.query
+    if (cotacao && quantidade) {
+        const conversao = convert.convert(cotacao, quantidade)
         res.render('cotacao', {
             error: false,
-            cotacao: convert.toMoney(cotacao) ,
+            cotacao: convert.toMoney(cotacao),
             quantidade: convert.toMoney(quantidade),
             conversao: convert.toMoney(conversao)
         })
-    }else{
+    } else {
         res.render('cotacao', {
             error: 'valores inválidos'
         })
@@ -29,10 +29,10 @@ app.get('/cotacao', (req, res) => {
 })
 
 app.listen(process.env.PORT || 3000, err => {
-   if (err){
-       console.log('nao foi possivel iniciar')
-   }else{
-       console.log('ConvertMyMoney esta online')
-   }
-
-})    
+    if (err) {
+        console.log('nao foi possivel iniciar')
+    } else {
+        console.log('ConvertMyMoney esta online')
+    }
+}
+)     
